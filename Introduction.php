@@ -1,0 +1,65 @@
+<?php
+session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    // Spara var användaren ville ta sig innan man loggar in
+    $_SESSION['redirect_after_login'] = $_SERVER['REQUEST_URI'];
+    header("Location: login.html");
+    exit;
+}
+?>
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduktion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>Python</header>
+    <div class="navbar">
+        <button><a href="index.php">Startsida</a></button>
+        <button><a href="Introduction.php">Introduktion</a></button>
+        <button><a href="Print.php">Print</a></button>
+        <button><a href="Class.php">Klasser</a></button>
+        <button><a href="Functions.php">Funktioner</a></button>
+        <button><a href="If-statement.php">If-statser</a></button>
+        <button><a href="EndProject.php">Python hiss övning</a></button>
+    </div>
+    <div class="container">
+        <h1>Introduktion</h1>
+        <h2>När uppkom Python</h2>
+        <p>Python skapades i slutet av 1980-talet av Guido van Rossum, en nederländsk programmerare. 
+            Han började utveckla språket under julen 1989 som ett hobbyprojekt medan han arbetade på Centrum Wiskunde & Informatica (CWI) i Nederländerna. 
+            Målet var att skapa ett lättläst, enkelt och kraftfullt programmeringsspråk som kunde ersätta ABC-språket, ett annat projekt han arbetat med. 
+            Namnet "Python" kommer inte från ormen, utan från komedigruppen Monty Python, vars humor van Rossum uppskattade. 
+            Den första officiella versionen av Python, 0.9.0, släpptes 1991. 
+            Sedan dess har språket vuxit till ett av världens mest populära programmeringsspråk, 
+            använt inom allt från webbutveckling och automatisering till artificiell intelligens och vetenskaplig forskning.
+        </p>
+        <h2>Pythons struktur</h2>
+        <p>Python är ett högnivåspråk med enkel och tydlig syntax som gör det lätt att läsa och skriva kod. 
+            Det är dynamiskt typat, vilket innebär att man inte behöver ange datatyper vid variabeldeklaration. 
+            Språket använder indrag (whitespace) för att strukturera kodblock istället för klamrar, vilket främjar god kodstil. 
+            Python är objektorienterat, men stöder även funktionell och imperativ programmering. 
+            Standardbiblioteket är stort och kraftfullt, vilket gör att många funktioner kan utföras utan externa paket. 
+            Samtidigt finns det ett aktivt ekosystem av tredjepartsbibliotek som utökar funktionaliteten. 
+            Python-tolkens flexibilitet gör det också populärt för prototyper och skript, samt för stora system inom vetenskap och industri.
+        </p>
+        <h2>För att kunna koda i Python</h2>
+        <p>Python måste vara installerat för att man ska kunna koda i med språket. Ett allternativ är att man använder sig av <b>extensions</b> knappen i exempelvis <b>VSCode</b>. 
+           Där söker man efter <b>Python</b> och att den ska vara släppt av <b>Microsoft</b>. Efter att man installerat tillägget startar man om VSCode så att språket kan bli använt.
+        </p>
+        <img src="/python_guide/python_images/image1.png" alt="Bild på hur extension knappen ser ut i VSCode">
+        <img src="/python_guide/python_images/image2.png" alt="Bild på det rätta Python tillägget">
+        <p>Efter att man installerat och startat om <b>VSCode</b> kan man börja skapa ett tomt python dokument där man kan skriva sin kod.</p>
+        <img src="/python_guide/python_images/image3.png" alt="Image">
+        <p>Tryck på <b>file</b>.</p>
+        <img src="/python_guide/python_images/image4.png" alt="Image">
+        <p>Sen skapar man ett nytt dokument.</p>
+        <img src="/python_guide/python_images/image5.png" alt="Image">
+        <p>Efter det namnger man dokumentet, vilket kan vara vad som helst men att <b>.py</b> måste finnas med i slutet.</p>
+    </div>
+<script src="footer.js" defer></script>
+</body>
+</html>

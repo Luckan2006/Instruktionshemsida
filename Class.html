@@ -1,25 +1,83 @@
+<?php
+session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    // Spara var användaren ville
+    $_SESSION['redirect_after_login'] = $_SERVER['REQUEST_URI'];
+    header("Location: login.html");
+    exit;
+}
+?>
 <!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Klasser</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <Header>Python</Header>
-    <div class="container">
-        <button><a href="index.html">Startsida</a></button>
-        <button><a href="Introduction.html">Introduktion</a></button>
-        <button><a href="Print.html">Print</a></button>
-        <button><a href="Class.html">Classer</a></button>
-        <button><a href="Functions.html">Funktioner</a></button>
-        <button><a href="Input.html">Input</a></button>
-        <button><a href="If-statement.html">If-statser</a></button>
-        <button><a href="Python_Elevator.html">Python hiss övning</a></button>
-        <button><a href="advanced_project.html">Python lite mer avancerad övning</a></p></button>
+<header>Python</header>
+    <div class="navbar">
+        <button><a href="index.php">Startsida</a></button>
+        <button><a href="Introduction.php">Introduktion</a></button>
+        <button><a href="Print.php">Print</a></button>
+        <button><a href="Class.php">Klasser</a></button>
+        <button><a href="Functions.php">Funktioner</a></button>
+        <button><a href="If-statement.php">If-statser</a></button>
+        <button><a href="EndProject.php">Python hiss övning</a></button>
     </div>
+    <div class="container">
+        <h2>Vad är en klass i Python för något?</h2>
+        <p>En klass i språket Python är en <b>mall</b> eller en form av <b>ritning</b> som man kan utgå ifrån när man skriver i Python. 
+            Exempel på detta är om man ska skriva ut personer med ålder mm. 
+            Men istället för att skriva om varje rad kod kan man använda en <b>Klass</b> som kan köras om och om igen. 
+            För att kunna förstå vad som händer nedan rekommenderas fuktioner genomgången först innan denna genomgång.
+        </p>
+        <h3>Exempel på en klass med två funktioner i:</h3>
+        <img src="/python_guide/python_images/image12.png" alt="Bild på kod">
+        <p>Först skapas klassen <b>Person</b> där det finns två funktioner. <b>__init__</b> är ett standartiserat namn på första funktionen i en klass. 
+            I den  skapas två variabler <b>namn</b> och <b>ålder</b>. I andra fuktionen som kallas <b>person</b> används print för att printa ut namn och ålder. 
+            Utanför klassen skapas <b>Person1</b> där klassen hämtas och <b>namn</b> och <b>ålder</b> får värdena <b>David</b> och <b>47</b>.
+            Efter detta använder man funktionen <b>person</b> till <b>person1</b> för att skriva ut den sträng som funktionen ska skriva ut i terminalen/konsolen.
+        </p>
+        <img src="/python_guide/python_images/image13.png" alt="Bild på kod">
+        <p>Här ser vi tydligt att funktionen från klassen <b>Person</b> används och skriver ut värden från <b>person1</b>. Nu när du har sätt hur en klass kan se ut skulle det vara bra att testa själv.
+        </p>
+        <h3>Övning:</h3>
+        <p>Du ska nu med hjälp av exemplet skapa en klass som ska heta <b>bil</b>. 
+            Bilen ska ha funktionen <b>__init__</b> och använda dig av <b>self</b>, <b>märke</b>, <b>modell</b>, <b>år</b> och <b>färg</b>. 
+            Efter det ska du skapa en till funktion i bil klassen som ska heta <b>bilen</b>. I funktionen ska du printa ut de olika variablerna som finns i <b>__init__</b> funktionen. 
+            Sista steget blir att skapa en variabel utanför klassen där värden för bilen ska skapas och under den ska funktionen <b>bilen</b> användas för att få ut bilens värden i terminalen/konsolen. 
+            Om du fastnar på någon del kan du kolla på bilderna nedan.
+        </p>
+        <div class="image-wrapped">
+            <img src="/python_guide/python_images/image14.png" alt="Bild på kod">
+            <div class="overlay">Klicka för att visa</div>
+        </div><br>
+        <div class="image-wrapped">
+            <img src="/python_guide/python_images/image15.png" alt="Bild på kod">
+            <div class="overlay">Klicka för att visa</div>
+        </div><br>
+                <div class="image-wrapped">
+            <img src="/python_guide/python_images/image16.png" alt="Bild på kod">
+            <div class="overlay">Klicka för att visa</div>
+        </div><br>
+        <div class="image-wrapped">
+            <img src="/python_guide/python_images/image17.png" alt="Bild på kod">
+            <div class="overlay">Klicka för att visa</div>
+        </div>
+        <p>Detta var allt för denna genomgången. Om du vill lära dig mer finns andra genomgångar genom att klicka på de knappar som finns högst upp på sidan.</p>
 
+    </div>
+<script src="footer.js" defer></script>
+<script>
+        document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll('.image-wrapped').forEach(function(e) {
+            e.addEventListener('click', function() {
+                e.classList.add('revealed');
+            });
+        });
+    });
+</script>
 </body>
-<script src="script.js" defer></script>
 </html>

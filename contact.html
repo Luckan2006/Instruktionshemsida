@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Kontakta oss</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Kontakta oss</h1>
+    <form action="contact.php" method="post">
+        <input type="text" name="name" placeholder="Ditt namn" required><br>
+        <input type="email" name="email" placeholder="Din e-post" required><br>
+        <textarea name="message" placeholder="Ditt meddelande" rows="6" required></textarea><br>
+        <label for="betyg">Hur nöjd är du med de olika genomgångarna?</label><br>
+        <div class="rating">
+            <input type="radio" name="betyg" id="star1" value="1"><label for="star1">1</label>
+            <input type="radio" name="betyg" id="star2" value="2"><label for="star2">2</label>
+            <input type="radio" name="betyg" id="star3" value="3"><label for="star3">3</label>
+            <input type="radio" name="betyg" id="star4" value="4"><label for="star4">4</label>
+            <input type="radio" name="betyg" id="star5" value="5"><label for="star5">5</label>
+        </div><br>
+        <button type="submit">Skicka</button>
+    </form>
+    <a href="index.php"><button>Tillbaka</button></a>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<?php
+session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    // Spara var användaren ville ta sig innan man loggar in
+    $_SESSION['redirect_after_login'] = $_SERVER['REQUEST_URI'];
+    header("Location: login.html");
+    exit;
+}
+?>
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>Python</header>
+    <div class="navbar">
+        <button><a href="index.php">Startsida</a></button>
+        <button><a href="Introduction.php">Introduktion</a></button>
+        <button><a href="Print.php">Print</a></button>
+        <button><a href="Class.php">Klasser</a></button>
+        <button><a href="Functions.php">Funktioner</a></button>
+        <button><a href="If-statement.php">If-statser</a></button>
+        <button><a href="EndProject.php">Python hiss övning</a></button>
+    </div>
+    <div class="container">
+        <h2>Vad är Print för något?</h1>
+        <p>Print används i python till att skriva ut vad som helst i konsolen/terminalen. 
+            Print är grunden till att få något utskrivet från det man försöker göra i sin kod. 
+            Men också för att kunna felsöka felkoder som man får när man kör sitt program.
+        </p>
+        <h2>Exempel på olika utskrifter med <b>Print</b></h2>
+        <h3>Första exemplet:</h3>
+        <img src="/python_guide/python_images/image6.png" alt="Bild på kod">
+        <p>Här använder vi print för att kunna skriva ut <b>Hej!</b>.</p>
+        <img src="/python_guide/python_images/image7.png" alt="Bild på kod">
+        <p>För att köra koden skriver man <b>Python</b> med filnamnet och sedan klickar man enter</p><br>
+        <h3>Andra exemplet:</h3>
+        <img src="/python_guide/python_images/image8.png" alt="Bild på kod">
+        <p>Nu använder vi av oss av två variabler <b>Namn</b> och <b>Efternamn</b>. Sen skriver vi in variablerna i <b>Print</b> och använder <b>+</b> tecknet för att sätta ihop textsträngarna.</p>
+        <img src="/python_guide/python_images/image9.png" alt="Bild på kod">
+        <p>Här får vi utskriften <b>DavidSurströmming</b>, vilket beror på <b>+</b> tecknet som användes i print. 
+            Däremot vill vi ha ett mellanrum mellan <b>Namnet</b> och <b>Efternamnet</b>.</p><br>
+        <p>Här få du en övning som blir att lägga till ett mellan rum mellan <b>Namnet</b> och <b>Efternamnet</b>. 
+        När du har löst uppgiften kan du klicka på bilden nedan för att se om du får ut rätt utskrift i terminalen.
+        </p>
+        <div class="image-wrapped">
+            <img src="/python_guide/python_images/image10.png" alt="Bild på kod">
+            <div class="overlay">Klicka för att visa</div>
+        </div>
+        <div class="image-wrapped">
+            <img src="/python_guide/python_images/image11.png" alt="Bild på kod">
+            <div class="overlay">Klicka för att visa</div>
+        </div>
+        <p>Efter att uppgiften är avklarad kan du testa att använda siffror och andra metamatiska symboler för att se vad som händer.</p><br>
+        <p>Detta var allt genomgången för <b>Print</b>, klicka på en ny knapp längst upp på sidan om du vill gå igenom något annat.</p>
+    </div>
+
+<script src="footer.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('.image-wrapped').forEach(function(e) {
+        e.addEventListener('click', function() {
+            e.classList.add('revealed');
+        });
+    });
+});
+</script>
+</body>
+</html>

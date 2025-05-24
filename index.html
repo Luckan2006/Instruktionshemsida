@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html> 
 <html lang="en">
 <head>
@@ -11,21 +8,14 @@ session_start();
 </head>
 <body>
     <header>Python</header>
-    <div class="navbar">
-        <button><a href="index.php">Startsida</a></button>
-        <button><a href="Introduction.php">Introduktion</a></button>
-        <button><a href="Print.php">Print</a></button>
-        <button><a href="Class.php">Klasser</a></button>
-        <button><a href="Functions.php">Funktioner</a></button>
-        <button><a href="If-statement.php">If-statser</a></button>
-        <button><a href="EndProject.php">Python hiss övning</a></button>
-        <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true): ?>
-            <a href="logout.php" onclick="return confirm('Är du säker på att du vill logga ut?')">
-                <button>Logga ut</button>
-            </a>
-        <?php else: ?>
-            <button><a href="login.html">Logga in</a></button>
-        <?php endif; ?>
+       <div class="navbar">
+        <button><a href="index.html">Startsida</a></button>
+        <button><a href="Introduction.html">Introduktion</a></button>
+        <button><a href="Print.html">Print</a></button>
+        <button><a href="Class.html">Klasser</a></button>
+        <button><a href="Functions.html">Funktioner</a></button>
+        <button><a href="If-statement.html">If-statser</a></button>
+        <button><a href="EndProject.html">Python hiss övning</a></button>
     </div>
     <div class="container">
         <h1>Språket Python</h1>

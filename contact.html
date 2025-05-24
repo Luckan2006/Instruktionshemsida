@@ -7,7 +7,11 @@
 </head>
 <body>
     <h1>Kontakta oss</h1>
-    <form action="contact.php" method="post">
+    <form name ="contact" method="post" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <p hidden>
+            <label>Fyll inte i detta fält: <input name="bot-field" /></label>
+        </p>
         <input type="text" name="name" placeholder="Ditt namn" required><br>
         <input type="email" name="email" placeholder="Din e-post" required><br>
         <textarea name="message" placeholder="Ditt meddelande" rows="6" required></textarea><br>
@@ -21,6 +25,6 @@
         </div><br>
         <button type="submit">Skicka</button>
     </form>
-    <a href="index.php"><button>Tillbaka</button></a>
+    <a href="index.html"><button>Tillbaka</button></a>
 </body>
 </html>

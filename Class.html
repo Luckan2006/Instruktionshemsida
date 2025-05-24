@@ -1,12 +1,3 @@
-<?php
-session_start();
-if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    // Spara var användaren ville
-    $_SESSION['redirect_after_login'] = $_SERVER['REQUEST_URI'];
-    header("Location: login.html");
-    exit;
-}
-?>
 <!DOCTYPE html> 
 <html lang="en">
 <head>
@@ -18,13 +9,13 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 <body>
 <header>Python</header>
     <div class="navbar">
-        <button><a href="index.php">Startsida</a></button>
-        <button><a href="Introduction.php">Introduktion</a></button>
-        <button><a href="Print.php">Print</a></button>
-        <button><a href="Class.php">Klasser</a></button>
-        <button><a href="Functions.php">Funktioner</a></button>
-        <button><a href="If-statement.php">If-statser</a></button>
-        <button><a href="EndProject.php">Python hiss övning</a></button>
+        <button><a href="index.html">Startsida</a></button>
+        <button><a href="Introduction.html">Introduktion</a></button>
+        <button><a href="Print.html">Print</a></button>
+        <button><a href="Class.html">Klasser</a></button>
+        <button><a href="Functions.html">Funktioner</a></button>
+        <button><a href="If-statement.html">If-statser</a></button>
+        <button><a href="EndProject.html">Python hiss övning</a></button>
     </div>
     <div class="container">
         <h2>Vad är en klass i Python för något?</h2>
